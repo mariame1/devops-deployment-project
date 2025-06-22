@@ -1,0 +1,10 @@
+#!/bin/bash
+
+EC2_USER="ubuntu"  # Ubuntu's default user
+EC2_IP="your-ec2-public-ip"
+KEY_PATH="~/.ssh/your-key.pem"  # Your private key path
+
+echo "[Deploying to EC2 at $EC2_IP]"
+
+scp -i $KEY_PATH -r * $EC2_USER@$EC2_IP:/home/ubuntu/devops-project/
+

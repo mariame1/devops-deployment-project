@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "script is running"
+
+
 LOG_FILE="$HOME/system_health.log"
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
@@ -10,4 +13,3 @@ free -h >> $LOG_FILE
 echo "Disk Usage:" >> $LOG_FILE
 df -h >> $LOG_FILE
 echo "------------------------------------" >> $LOG_FILE
-

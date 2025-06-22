@@ -1,0 +1,8 @@
+#!/bin/bash
+
+EC2_USER="ec2-user"
+EC2_IP="your-ec2-ip"
+KEY_PATH="~/.ssh/your-key.pem"
+
+echo "[Deploying to EC2 at $EC2_IP]"
+scp -i $KEY_PATH -r * $EC2_USER@$EC2_IP:/home/ec2-user/devops-project/
