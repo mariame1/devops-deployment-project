@@ -9,6 +9,10 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 echo 'Cloning GitHub repo using SSH...'
+                // Print current Git branches (for debugging)
+                sh 'git branch -a || true'
+                sh 'git rev-parse --abbrev-ref HEAD || true'
+                // Explicitly specify the main branch
                 git credentialsId: 'github-ssh-fresh', url: 'git@github.com:mariame1/devops-deployment-project.git'
             }
         }
