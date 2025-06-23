@@ -9,7 +9,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 echo 'Cloning GitHub repo using SSH...'
-                git cedentialsId: 'github-ssh-refresh', url: 'git@github.com:mariame1/devops-deployment-project.git'
+                git credentialsId: 'github-ssh-refresh', url: 'git@github.com:mariame1/devops-deployment-project.git'
             }
         }
 
