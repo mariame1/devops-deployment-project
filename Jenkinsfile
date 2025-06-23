@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                echo 'Cloning GitHub repo...'
-                git url: 'https://github.com/mariame1/devops-deployment-project.githttps://github.com/mariame1/devops-deployment-project.git'
+                echo 'Cloning GitHub repo using SSH...'
+                git cedentialsId: 'github-ssh-refresh', url: 'git@github.com:mariame1/devops-deployment-project.git'
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
         stage('Deploy to EC2') {
             steps {
                 echo 'Deploying to EC2 instance...'
-                sh 'bash ${DEPLOY_SCRIPT}'
+                sh "bash ${DEPLOY_SCRIPT}"
             }
         }
     }
